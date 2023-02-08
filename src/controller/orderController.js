@@ -6,7 +6,7 @@ const { isValidTitle, isvalidRating } = require("../validator");
 
 const sgMail = require("@sendgrid/mail")
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey("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");
 
 
 
@@ -65,7 +65,7 @@ const createOrder = async(req,res)=>{
   const msgConfig = {
     
     to: `${email}`,
-    from: process.env.EMAIL_FROM,
+    from: "mastercontrollerShiped123@gmail.com",
     
     subject: "Sendgrind test mail",
     text: "This is a test mail from nodejs using sendgrid",
