@@ -23,7 +23,7 @@ const verifyToken = async (req,res,next)=>{
 
     if(token){
 
-    jwt.verify(token, process.env.jwt_secretKey,(err,tokenDetails)=>{
+    jwt.verify(token,"bonus-project-orderMangement",(err,tokenDetails)=>{
         if(err) return res.status(403).send({status:false,message:err.message})
         req.tokenDetails = tokenDetails
         next()

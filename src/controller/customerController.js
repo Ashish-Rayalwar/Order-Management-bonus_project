@@ -62,7 +62,7 @@ const loginCustomer = async(req,res)=>{
 
     if(!checkPassword) return res.status(400).send({status:false,message:"given password is invalid"})
 
-    let token  = jwt.sign({customerId:customerId},process.env.jwt_secretKey,{expiresIn:86400})
+    let token  = jwt.sign({customerId:customerId},"bonus-project-orderMangement",{expiresIn:86400})
 
     res.status(200).send({status:true,message:"Success",toke:token,customerId:customerId})
     
